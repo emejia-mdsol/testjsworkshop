@@ -1,0 +1,25 @@
+
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Functional Tests
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ianwalter/puppeteer-container@v4.0.0
+    - name: Run functional tests
+      run: |
+        cd ./solutions/06_CICD_Integration/webdriverio
+        npm i
+        npm run test
