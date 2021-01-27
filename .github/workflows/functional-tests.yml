@@ -20,6 +20,6 @@ jobs:
     - uses: ianwalter/puppeteer-container@v4.0.0
     - name: Run functional tests
       run: |
-        cd ./solutions/06_CICD_Integration/webdriverio
+        cd ./
         npm i
         npm run test
